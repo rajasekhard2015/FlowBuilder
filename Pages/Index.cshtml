@@ -1,0 +1,61 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<style>
+    .flowchart-example-container {
+        width: 100%;
+        height: 400px;
+        background: white;
+        border: 1px solid #BBB;
+        margin-bottom: 10px;
+    }
+</style>
+@section scripts
+{
+<script>
+  $(document).ready(function() {
+    var data = {
+      operators: {
+        operator: {
+          top: 20,
+          left: 20,
+          properties: {
+            title: 'Operator',
+            inputs: {
+              input_1: {
+                label: 'Input 1',
+              },
+              input_2: {
+                label: 'Input 2',
+              }
+            },
+            outputs: {
+              output_1: {
+                label: 'Output 1',
+              },
+              output_2: {
+                label: 'Output 2',
+              },
+              output_3: {
+                label: 'Output 3',
+              }
+            }
+          }
+        }
+      }
+    };
+            $('#flowchartworkspace').flowchart({
+            data: data
+          });
+  });
+</script>
+}
+<div style="margin-bottom:30px;">
+<a href="http://sebastien.drouyer.com/jquery.flowchart-demo/#advanced">Flow builder reference</a>
+</div>
+
+<div id="chart_container">
+	<div class="flowchart-example-container" id="flowchartworkspace"></div>
+</div>
